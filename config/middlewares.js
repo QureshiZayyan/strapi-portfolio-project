@@ -1,21 +1,15 @@
 module.exports = [
-  'strapi::logger',
-{
-  resolve: './src/middlewares/logger',
-  config: {
-    enabled: true,
-  },
-},
   'strapi::errors',
-  // 'strapi::security',
+  'strapi::security',
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://strapi-portfolio-project-1.onrender.com', 'http://localhost:3000'], // Include your front-end domain.
+      origin: ['https://strapi-portfolio-project-1.onrender.com'], // Use your Render app URL
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization'],
     },
-    
   },
-  'strapi::poweredBy',
+  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
