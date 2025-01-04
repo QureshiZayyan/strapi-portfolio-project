@@ -14,3 +14,6 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
 });
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
